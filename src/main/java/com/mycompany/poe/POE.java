@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class POE {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
          Login login = new Login();
  
