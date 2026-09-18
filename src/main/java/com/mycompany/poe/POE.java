@@ -14,38 +14,52 @@ public class POE {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        System.out.print("Please enter your name: ");
-        String name = input.nextLine();
-
-        System.out.print("Please enter your Cellphone number: ");
-        String cell_num = input.nextLine();
-
-        System.out.print("Please enter your username: ");
-        String username = input.nextLine();
-
-        System.out.print("Please enter your password: ");
-        String password = input.nextLine();
-
-        Login login = new Login(name, cell_num, username, password);
-
-        if (login.checkUsername()) {
-            System.out.println("Username successfully captured");
-        } else {
-            System.out.println("Username is not successfully captured, please ensure that your username contains an underscore and is no more than five characters in length.");
+        
+         Login login = new Login();
+ 
+        System.out.println("=== User Registration ===");
+ 
+        System.out.print("Enter first name: ");
+        login.setFirstName(scanner.nextLine());
+ 
+        System.out.print("Enter last name: ");
+        login.setLastName(scanner.nextLine());
+ 
+        System.out.print("Enter a username (must contain an underscore "
+                + "and be no more than 5 characters): ");
+        String username = scanner.nextLine();
+        login.setUsername(username);
+ 
+        System.out.print("Enter a password (min 8 characters, 1 capital "
+                + "letter, 1 number, 1 special character): ");
+        String password = scanner.nextLine();
+        login.setPassword(password);
+ 
+        System.out.print("Enter a South African cell phone number "
+                + "(e.g. +27838968976): ");
+        String cellPhoneNumber = scanner.nextLine();
+        login.setCellPhoneNumber(cellPhoneNumber);
+ 
+        System.out.println();
+        System.out.println(login.registerUser());
+ 
+        boolean registeredOk = login.checkUserName(username)
+                && login.checkPasswordComplexity(password)
+                && login.checkCellPhoneNumber(cellPhoneNumber);
+ 
+        if (registeredOk) {
+            System.out.println();
+            System.out.println("=== User Login ===");
+            System.out.print("Enter your username: ");
+            String loginUsername = scanner.nextLine();
+            System.out.print("Enter your password: ");
+            String loginPassword = scanner.nextLine();
+ 
+            boolean loginSuccess = login.loginUser(loginUsername, loginPassword);
+            System.out.println(login.returnLoginStatus(loginSuccess));
         }
-
-        if (login.checkCellnum()) {
-            System.out.println("Cellphone number successfully captured");
-        } else {
-            System.out.println("Cellphone number is incorrectly formatted or does not contain an international code, please correct the number and try again.");
-        }
-
-        if (login.checkPasswordComplexity()) {
-            System.out.println("Password successfully captured");
-        } else {
-            System.out.println("Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.");
-        }
+ 
+        scanner.close();
     }
 }
 
