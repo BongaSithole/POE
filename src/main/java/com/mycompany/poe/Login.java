@@ -111,9 +111,6 @@ public class Login {
                 + "than five characters in length.";
     }
  
-    /**
-     * Returns the capture message for the password field.
-     */
     public String capturePasswordMessage(String password) {
         if (checkPasswordComplexity(password)) {
             return "Password successfully captured.";
