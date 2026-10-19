@@ -7,9 +7,7 @@ package com.mycompany.poe;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
 /**
  *
  * @author Student
@@ -148,5 +146,17 @@ public class MessageTest {
         assertTrue(contents.contains("\"messageHash\": \"00:0:HITONIGHT\""));
  
         file.delete(); 
+    }
+
+    private void assertTrue(boolean contains) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void assertEquals(int i, int returnTotalMessages) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void assertEquals(String expResult, String result) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
