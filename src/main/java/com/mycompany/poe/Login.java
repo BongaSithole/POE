@@ -28,6 +28,11 @@ public class Login {
     private String lastName;
  
     public Login() {
+        username = "";
+        password = "";
+        cellPhoneNumber = "";
+        firstName = "";
+        lastName = "";
     }
  
     public Login(String username, String password, String cellPhoneNumber,
@@ -155,7 +160,7 @@ public class Login {
         if (loginSuccessful) {
             return "Welcome " + firstName + ", " + lastName
                     + " it is great to see you again.";
-        }
+        } 
         return "Username or password incorrect, please try again.";
-    }
+      }       
 }
