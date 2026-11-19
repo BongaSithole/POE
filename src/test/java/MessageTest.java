@@ -4,6 +4,7 @@
  */
 
 
+import com.mycompany.poe.Message;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;

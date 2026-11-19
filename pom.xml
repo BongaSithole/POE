@@ -20,7 +20,6 @@
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
             <type>jar</type>
-            <classifier>&lt;null value&gt;</classifier>
         </dependency>
 
         <dependency>
@@ -29,7 +28,35 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+          <dependency>
+               <groupId>com.hexagonkt</groupId>
+               <artifactId>store</artifactId>
+               <version>2.1.2</version>
+               <scope>test</scope>
+               <type>jar</type>
+          </dependency>
+          <dependency>
+               <groupId>com.github.fs2-blobstore</groupId>
+               <artifactId>core_2.13</artifactId>
+               <version>0.9.15</version>
+               <scope>test</scope>
+               <type>jar</type>
+          </dependency>
+          <dependency>
+               <groupId>io.smooth-way</groupId>
+               <artifactId>store</artifactId>
+               <version>0.0.4</version>
+               <scope>test</scope>
+               <type>jar</type>
+          </dependency>
+          <dependency>
+               <groupId>com.github.fs2-blobstore</groupId>
+               <artifactId>core_2.12</artifactId>
+               <version>0.9.15</version>
+               <scope>test</scope>
+               <type>jar</type>
+          </dependency>
+     </dependencies>
 
     <build>
         <plugins>

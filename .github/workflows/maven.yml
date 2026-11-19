@@ -1,0 +1,35 @@
+name: Java CI (build and test)
+
+# Runs on every push to any branch (including feature branches)
+# and on every pull request into main.
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      # "verify" compiles the code, runs all the JUnit tests in src/test/java
+      # and builds the jar. The build fails if any test fails.
+      - name: Build and run tests
+        run: mvn --batch-mode verify
+
+      - name: Save the test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-test-reports
+          path: target/surefire-reports/

@@ -4,6 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import com.mycompany.poe.Message;
+import com.mycompany.poe.MessageStore;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +19,8 @@ import static org.junit.Assert.*;
  */
 public class MessageScoreTest {
     
-     private Message message1;
+    private MessageStore store;
+    private Message message1;
     private Message message2;
     private Message message3;
     private Message message4;

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import com.mycompany.poe.Login;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
